@@ -24,7 +24,7 @@ class App extends Component{
   onChangePersonal = (event)=>{
     // take a copy of the object and update its value
     // spread is to take a copy of object
-    // square bracket is to the indicate te key value pair in the object
+    // square bracket is to the indicate te key as a variable in the key value pair of the object
     const updatedInfo = {
       ...this.state, [event.target.name]:event.target.value
     }
