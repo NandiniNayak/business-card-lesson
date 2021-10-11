@@ -10,7 +10,7 @@ class App extends Component{
       surname: '',
       email:'',
       phone:'',
-      adress: {
+      address: {
         number:'',
         street:'',
         suburb:'',
@@ -30,12 +30,31 @@ class App extends Component{
     }
     this.setState(updatedInfo)
   }
+
+  onChangeAddress = (event) => {
+    // adress is an Object, hence create a copy and update it
+    // spread is to take a copy of object
+    // square bracket is to the indicate te key as a variable in the key value pair of the object
+    const updatedAddress = {
+      ...this.state.address,
+      [event.target.name]: event.target.value
+    }
+
+    // update the address to the state
+    const updatedInfo = {
+      ...this.state,
+      address: updatedAddress
+    }
+    // set the state
+    this.setState(updatedInfo)
+  }
   render(){
     return(
       <div>
         <Form
           {...this.state}
           onChangePersonal={this.onChangePersonal}
+          onChangeAddress={this.onChangeAddress}
         />
         <Card
           {...this.state}

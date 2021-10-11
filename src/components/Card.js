@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Card = ({name,surname,email,phone}) =>{
+const Card = ({name,surname,email,phone, address :{number, street, suburb,state,postcode,country}}) =>{
     const container={
         width:'500px',
         minHeight:'500px',
@@ -39,11 +39,11 @@ const Card = ({name,surname,email,phone}) =>{
                     <hr style={hrStyles}/>
                     <p>PHONE {phone}</p>
                     <hr style={hrStyles}/>
-                    <p>ADDRESS</p>
+                    <p>ADDRESS {number} {street} {suburb} {state}</p>
                     <hr style={hrStyles}/>
-                    <p>POSTCODE</p>
+                    <p>POSTCODE {postcode}</p>
                     <hr style={hrStyles}/>
-                    <p>COUNTRY</p>
+                    <p>COUNTRY {country}</p>
                     <hr style={hrStyles}/>
                 </div>
             </div>
